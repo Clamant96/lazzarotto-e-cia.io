@@ -1,0 +1,311 @@
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #003366;
+    --secondary: #00509E;
+    --accent: #FF6B00;
+    --light: #F5F7FA;
+    --dark: #333333;
+    --text: #444444;
+}
+
+body {
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 60px;
+}
+
+.logo h1 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-left: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp:hover {
+    background-color: #e05a00;
+}
+
+/* Sobre */
+.sobre {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Serviços */
+.servicos {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.servico-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.servico-icon {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.servico-content {
+    padding: 25px;
+}
+
+.servico-content h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.servico-content ul {
+    list-style-position: inside;
+    margin-bottom: 20px;
+}
+
+.servico-content li {
+    margin-bottom: 8px;
+}
+
+/* CTA WhatsApp */
+.cta-whatsapp {
+    background-color: var(--primary);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-whatsapp h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-whatsapp p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Botão WhatsApp Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav li {
+        margin: 5px 10px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
