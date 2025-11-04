@@ -18,11 +18,6 @@
 body, html {
     color: var(--text);
     line-height: 1.6;
-    /* background-color: var(--light); */
-    /* background-image: url('../assets/img/background_marca_dgua.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%; */
 }
 
 .container {
@@ -46,6 +41,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    position: relative;
 }
 
 .logo {
@@ -63,35 +59,131 @@ header {
     margin-left: 10px;
 }
 
-nav ul {
+/* Menu Desktop */
+.nav-menu ul {
     display: flex;
     list-style: none;
 }
 
-nav li {
+.nav-menu li {
     margin-left: 25px;
 }
 
-nav a {
+.nav-menu a {
     text-decoration: none;
     color: var(--dark);
     font-weight: 500;
     transition: color 0.3s;
 }
 
-nav a:hover {
+.nav-menu a:hover {
     color: var(--secondary);
+}
+
+/* Menu Mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+/* Menu lateral para mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: white;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        transition: left 0.3s ease;
+        padding-top: 80px;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 15px 10px;
+        color: var(--dark);
+        font-weight: 500;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-menu a:hover {
+        background-color: #f5f5f5;
+        color: var(--secondary);
+    }
+    
+    .menu-overlay.active {
+        display: block;
+    }
+    
+    /* Animação do menu hamburguer para X */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 6px);
+    }
+    
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(50deg) translate(-7px, -6px);
+    }
 }
 
 /* Hero Section */
 .hero {
-    /*background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);*/
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/img/background_building_work.jpg');
     background-color: #26262690;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -138,7 +230,6 @@ nav a:hover {
 /* Sobre */
 .sobre {
     padding: 80px 0px 0px 0px;
-    /*background-color: white;*/
 }
 
 .section-title {
@@ -161,7 +252,6 @@ nav a:hover {
 /* Serviços */
 .servicos {
     padding: 80px 0;
-    /*background-color: var(--light);*/
 }
 
 .servicos-grid {
@@ -184,13 +274,11 @@ nav a:hover {
 }
 
 .servico-icon {
-    /*background-color: var(--primary);*/
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/img/background_building_work.jpg');
     background-color: #26262690;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-
     color: white;
     padding: 20px;
     text-align: center;
@@ -302,7 +390,7 @@ footer {
     transform: scale(1.1);
 }
 
-.whatsapp-float img {
+.whatsapp-float svg {
     width: 35px;
     height: 35px;
 }
@@ -310,23 +398,14 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
     
     .logo {
-        margin-bottom: 15px;
+        margin-bottom: 0;
     }
     
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    nav li {
-        margin: 5px 10px;
-    }
-
     .hero {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/background_building_work.jpg);
         background-color: #26262690;
@@ -341,5 +420,9 @@ footer {
     
     .hero p {
         font-size: 1rem;
+    }
+    
+    .servicos-grid {
+        grid-template-columns: 1fr;
     }
 }
