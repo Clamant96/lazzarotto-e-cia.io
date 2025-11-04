@@ -15,10 +15,14 @@
     --text: #444444;
 }
 
-body {
+body, html {
     color: var(--text);
     line-height: 1.6;
-    background-color: var(--light);
+    /* background-color: var(--light); */
+    /* background-image: url('../assets/img/background_marca_dgua.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%; */
 }
 
 .container {
@@ -81,7 +85,13 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    /*background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/img/background_building_work.jpg');
+    background-color: #26262690;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -115,10 +125,20 @@ nav a:hover {
     background-color: #e05a00;
 }
 
+/* bloco */
+.bloco {
+    width: 100%;
+    height: auto;
+    background-image: url(../assets/img/background_marca_dgua.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 /* Sobre */
 .sobre {
-    padding: 80px 0;
-    background-color: white;
+    padding: 80px 0px 0px 0px;
+    /*background-color: white;*/
 }
 
 .section-title {
@@ -141,7 +161,7 @@ nav a:hover {
 /* Serviços */
 .servicos {
     padding: 80px 0;
-    background-color: var(--light);
+    /*background-color: var(--light);*/
 }
 
 .servicos-grid {
@@ -164,7 +184,13 @@ nav a:hover {
 }
 
 .servico-icon {
-    background-color: var(--primary);
+    /*background-color: var(--primary);*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/img/background_building_work.jpg');
+    background-color: #26262690;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
     color: white;
     padding: 20px;
     text-align: center;
@@ -299,6 +325,14 @@ footer {
     
     nav li {
         margin: 5px 10px;
+    }
+
+    .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/background_building_work.jpg);
+        background-color: #26262690;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
     }
     
     .hero h2 {
