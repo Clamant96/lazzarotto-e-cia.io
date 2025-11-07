@@ -326,6 +326,10 @@ header {
     justify-content: center;
 }
 
+.servico-content .servico-cta-whatsapp .container .btn-whatsapp {
+    font-size: 1rem;
+}
+
 /* CTA WhatsApp */
 .cta-whatsapp {
     background-color: var(--primary);
