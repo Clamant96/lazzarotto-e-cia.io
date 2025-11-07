@@ -295,6 +295,10 @@ header {
     font-size: 1.4rem;
 }
 
+.servico-content .p-btn-whatsapp {
+    min-height: 76.8px;
+}
+
 .servico-content ul {
     list-style-position: inside;
     margin-bottom: 20px;
@@ -302,6 +306,24 @@ header {
 
 .servico-content li {
     margin-bottom: 8px;
+}
+
+/* CARD CTA WhatsApp */
+.servico-content .servico-cta-whatsapp {
+    padding: 20px 0px 0px 0px;
+    text-align: center;
+}
+
+.servico-content .servico-cta-whatsapp .container {
+    padding: 0px;
+    margin: 0px;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* CTA WhatsApp */
