@@ -37,3 +37,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os elementos details
+    const detailsElements = document.querySelectorAll('details');
+    
+    // Inicialmente fecha todos os detalhes
+    detailsElements.forEach(detail => {
+    detail.open = false;
+    });
+    
+    // Adiciona evento de clique para cada details
+    detailsElements.forEach(detail => {
+    detail.addEventListener('click', function(e) {
+        // Se este details está sendo aberto
+        if (!this.open) {
+        // Fecha todos os outros details
+        detailsElements.forEach(otherDetail => {
+            if (otherDetail !== this) {
+            otherDetail.open = false;
+            }
+        });
+        }
+    });
+    });
+    
+    // Controle das seções principais
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    
+    sectionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+        const section = this.closest('.section');
+        const isExpanded = section.classList.contains('expanded');
+        
+        // Fecha todas as seções
+        document.querySelectorAll('.section').forEach(s => {
+        s.classList.remove('expanded');
+        });
+        
+        // Se a seção clicada não estava expandida, expande ela
+        if (!isExpanded) {
+        section.classList.add('expanded');
+        }
+    });
+    });
+});
